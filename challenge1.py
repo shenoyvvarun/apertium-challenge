@@ -181,7 +181,7 @@ def get_possible(conversion,source_sentence,target_sentence,lang_dir,language):
         for j in range(i,len(source_words)):
             test_set.append(" ".join(source_words[i:j+1]))
     process_output = ''
-    #Execute the apertium process and get the output, Instead for forking the apertium process for every possible pair, we form a paragraph and do it once
+    #Execute the apertium process and get the output, Instead for forking(forking is expensive) the apertium process for every possible pair, we form a paragraph(; sep) and do it once
     try:
         apertium_process = ''
         if is_default_apertium:
